@@ -13,6 +13,10 @@ public class Payments {
         this.monthlyPayments = new ArrayList<>();
     }
 
+    public Payments(final List<MonthlyPayment> monthlyPayments) {
+        this.monthlyPayments = monthlyPayments;
+    }
+
     public void addPayment(final MonthlyPayment monthlyPayment) {
         this.monthlyPayments.add(monthlyPayment);
     }

@@ -6,13 +6,16 @@ package com.zopa.service;
 public class Loan {
     private Lender lender;
     private Double originalRate;
-    private Integer loanedAmount;
+    private Integer loanAmount;
     private Payments payments;
 
-    public Loan(final Lender lender, final Double originalRate, final Integer loanedAmount, final Payments payments) {
+    public Loan() {
+    }
+
+    public Loan(final Lender lender, final Double originalRate, final Integer loanAmount, final Payments payments) {
         this.lender = lender;
         this.originalRate = originalRate;
-        this.loanedAmount = loanedAmount;
+        this.loanAmount = loanAmount;
         this.payments = payments;
     }
 
@@ -32,12 +35,12 @@ public class Loan {
         this.originalRate = originalRate;
     }
 
-    public Integer getLoanedAmount() {
-        return this.loanedAmount;
+    public Integer getLoanAmount() {
+        return this.loanAmount;
     }
 
-    public void setLoanedAmount(final Integer loanedAmount) {
-        this.loanedAmount = loanedAmount;
+    public void setLoanAmount(final Integer loanAmount) {
+        this.loanAmount = loanAmount;
     }
 
     public Payments getPayments() {
@@ -53,7 +56,7 @@ public class Loan {
         return "Loan{" +
                 "lender=" + this.lender +
                 ", originalRate=" + this.originalRate +
-                ", loanedAmount=" + this.loanedAmount +
+                ", loanAmount=" + this.loanAmount +
                 ", payments=" + this.payments +
                 '}';
     }

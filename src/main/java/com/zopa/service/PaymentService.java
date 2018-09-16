@@ -23,13 +23,6 @@ public class PaymentService {
 
         payments.setMonthlyPayments(monthlyPaymentList);
 
-
-        for (int month = 0; month < LOANS; month++) {
-            final Double repayment = this.getRepayment(bestLender, borrowingAmount);
-
-            payments.addPayment(new MonthlyPayment(repayment));
-        }
-
         return payments;
     }
 
