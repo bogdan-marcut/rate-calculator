@@ -5,15 +5,20 @@ import com.zopa.service.DataSourceNotAvailable;
 import com.zopa.service.lender.Lender;
 import com.zopa.service.lender.LenderRepository;
 
+import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.zopa.service.ErrorTypeEnum.FILE_FORMAT_INVALID;
+import static com.zopa.service.ErrorTypeEnum.FILE_NOT_FOUND;
+
 /**
  * Created by Bogdan Marcut on 15-Sep-18.
  */
+@Dependent
 public class LenderCSVRepository implements LenderRepository {
 
     @Inject
@@ -28,12 +33,12 @@ public class LenderCSVRepository implements LenderRepository {
                     .map(this::buildLender)
                     .collect(Collectors.toList());
         } catch (final IOException e) {
-            throw new DataSourceNotAvailable("File " + fileName + " not found!");
+            throw new DataSourceNotAvailable(FILE_NOT_FOUND.getError());
         }
     }
 
     private Lender buildLender(final String[] line) throws DataSourceIsInvalid {
-        if (line == null || line.length != 3) throw new DataSourceIsInvalid("File format is invalid!");
+        if (line == null || line.length != 3) throw new DataSourceIsInvalid(FILE_FORMAT_INVALID.getError());
 
         final Lender lender = new Lender();
         lender.setName(line[0]);
@@ -47,7 +52,7 @@ public class LenderCSVRepository implements LenderRepository {
         try {
             return Double.parseDouble(cell);
         } catch (final NumberFormatException e) {
-            throw new DataSourceIsInvalid("File format is invalid!");
+            throw new DataSourceIsInvalid(FILE_FORMAT_INVALID.getError());
         }
     }
 }

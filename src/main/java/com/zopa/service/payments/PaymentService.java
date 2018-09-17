@@ -2,6 +2,7 @@ package com.zopa.service.payments;
 
 import com.zopa.service.lender.Lender;
 
+import javax.enterprise.context.Dependent;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -11,6 +12,7 @@ import static java.util.stream.Collectors.*;
 /**
  * Created by Bogdan Marcut on 16-Sep-18.
  */
+@Dependent
 public class PaymentService {
 
     private static final int LOANS = 36;

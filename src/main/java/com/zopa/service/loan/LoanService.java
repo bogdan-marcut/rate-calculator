@@ -6,11 +6,13 @@ import com.zopa.service.lender.LenderService;
 import com.zopa.service.payments.PaymentService;
 import com.zopa.service.payments.Payments;
 
+import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 
 /**
  * Created by Bogdan Marcut on 15-Sep-18.
  */
+@Dependent
 public class LoanService {
 
     @Inject
@@ -24,9 +26,7 @@ public class LoanService {
 
         final Payments payments = this.paymentService.calculatePayments(bestLender, borrowingAmount);
 
-        final Loan loan = new Loan(bestLender, bestLender.getRate(), borrowingAmount, payments);
-
-        return loan;
+        return new Loan(bestLender, bestLender.getRate(), borrowingAmount, payments);
     }
 
 }

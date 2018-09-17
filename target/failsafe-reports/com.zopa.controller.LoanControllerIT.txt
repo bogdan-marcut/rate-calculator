@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.zopa.controller.LoanControllerIT
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.606 s - in com.zopa.controller.LoanControllerIT
