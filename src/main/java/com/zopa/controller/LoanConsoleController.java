@@ -1,15 +1,15 @@
 package com.zopa.controller;
 
-import com.zopa.service.Loan;
-import com.zopa.service.LoanService;
 import com.zopa.service.RateCalculatorException;
+import com.zopa.service.loan.Loan;
+import com.zopa.service.loan.LoanService;
 
 import javax.inject.Inject;
 
 /**
  * Created by Bogdan Marcut on 15-Sep-18.
  */
-public class LoanControllerImpl implements LoanController {
+public class LoanConsoleController implements LoanController {
 
     @Inject
     private LoanService loanService;

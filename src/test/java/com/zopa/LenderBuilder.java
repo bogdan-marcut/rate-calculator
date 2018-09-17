@@ -1,6 +1,6 @@
 package com.zopa;
 
-import com.zopa.service.Lender;
+import com.zopa.service.lender.Lender;
 
 /**
  * Created by Bogdan Marcut on 16-Sep-18.

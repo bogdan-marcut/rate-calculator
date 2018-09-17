@@ -1,4 +1,4 @@
-package com.zopa.service;
+package com.zopa.service.payments;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.zopa.service;
+package com.zopa.service.lender;
 
 /**
  * Created by Bogdan Marcut on 15-Sep-18.
@@ -12,7 +12,7 @@ public class Lender {
         super();
     }
 
-    public Lender(String name, Double rate, Double maximumAmount) {
+    public Lender(final String name, final Double rate, final Double maximumAmount) {
         super();
         this.name = name;
         this.rate = rate;
@@ -20,35 +20,35 @@ public class Lender {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     public Double getRate() {
-        return rate;
+        return this.rate;
     }
 
-    public void setRate(Double rate) {
+    public void setRate(final Double rate) {
         this.rate = rate;
     }
 
     public Double getMaximumAmount() {
-        return maximumAmount;
+        return this.maximumAmount;
     }
 
-    public void setMaximumAmount(Double maximumAmount) {
+    public void setMaximumAmount(final Double maximumAmount) {
         this.maximumAmount = maximumAmount;
     }
 
     @Override
     public String toString() {
         return "Lender{" +
-                "name='" + name + '\'' +
-                ", rate=" + rate +
-                ", maximumAmount=" + maximumAmount +
+                "name='" + this.name + '\'' +
+                ", rate=" + this.rate +
+                ", maximumAmount=" + this.maximumAmount +
                 '}';
     }
 }

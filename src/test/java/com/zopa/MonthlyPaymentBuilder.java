@@ -1,6 +1,6 @@
 package com.zopa;
 
-import com.zopa.service.MonthlyPayment;
+import com.zopa.service.payments.MonthlyPayment;
 
 /**
  * Created by Bogdan Marcut on 16-Sep-18.

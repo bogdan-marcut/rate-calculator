@@ -1,6 +1,8 @@
-package com.zopa.service;
+package com.zopa.service.lender;
 
-import com.zopa.repository.LenderRepository;
+import com.zopa.service.DataSourceIsInvalid;
+import com.zopa.service.DataSourceNotAvailable;
+import com.zopa.service.RateCalculatorException;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -18,7 +20,7 @@ public class LenderService {
     public List<Lender> getLenders(final String fileName) throws RateCalculatorException {
         try {
             return this.lenderRepository.getLenders(fileName);
-        } catch (final DataSourceNotAvailable e) {
+        } catch (final DataSourceNotAvailable | DataSourceIsInvalid e) {
             throw new RateCalculatorException("Could not extract data from file " + fileName);
         }
     }
@@ -28,6 +30,6 @@ public class LenderService {
 
         return lenders.stream()
                 .filter(lender -> lender.getMaximumAmount() >= borrowingAmount)
-                .min(comparingDouble(Lender::getRate)).orElseThrow(NoLenderAvailable::new);
+                .min(comparingDouble(Lender::getRate)).orElseThrow(() -> new RateCalculatorException("No lender available!"));
     }
 }

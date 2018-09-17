@@ -1,4 +1,4 @@
-package com.zopa.service;
+package com.zopa.service.payments;
 
 /**
  * Created by Bogdan Marcut on 15-Sep-18.

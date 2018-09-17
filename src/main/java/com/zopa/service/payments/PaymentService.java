@@ -1,4 +1,6 @@
-package com.zopa.service;
+package com.zopa.service.payments;
+
+import com.zopa.service.lender.Lender;
 
 import java.util.List;
 import java.util.stream.IntStream;
@@ -11,8 +13,8 @@ import static java.util.stream.Collectors.*;
  */
 public class PaymentService {
 
-    public static final int LOANS = 36;
-    public static final int PERIODS = 12;
+    private static final int LOANS = 36;
+    private static final int PERIODS = 12;
 
     public Payments calculatePayments(final Lender bestLender, final Integer borrowingAmount) {
         final Payments payments = new Payments();

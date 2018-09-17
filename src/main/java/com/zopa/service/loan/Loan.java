@@ -1,4 +1,7 @@
-package com.zopa.service;
+package com.zopa.service.loan;
+
+import com.zopa.service.lender.Lender;
+import com.zopa.service.payments.Payments;
 
 /**
  * Created by Bogdan Marcut on 15-Sep-18.

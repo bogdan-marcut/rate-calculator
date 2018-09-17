@@ -3,7 +3,11 @@ package com.zopa.controller;
 import com.zopa.LenderBuilder;
 import com.zopa.LoanBuilder;
 import com.zopa.PaymentsBuilder;
-import com.zopa.service.*;
+import com.zopa.service.lender.Lender;
+import com.zopa.service.loan.Loan;
+import com.zopa.service.loan.LoanService;
+import com.zopa.service.payments.MonthlyPayment;
+import com.zopa.service.payments.Payments;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -25,7 +29,7 @@ import static org.mockito.Mockito.*;
 public class LoanControllerShould {
 
     @InjectMocks
-    private final LoanController loanController = new LoanControllerImpl();
+    private LoanConsoleController loanController;
 
     @Mock
     private LoanService loanService;
