@@ -1,9 +1,9 @@
 # rate-calculator
 
 ### Run Tests
-'''
+"""
 mvn verify
-'''
+"""
 
 ### Build the application
 '''
